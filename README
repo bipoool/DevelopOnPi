@@ -1,0 +1,9 @@
+1. Write code for backendServer
+    -> they should have /health, /status for 
+    LB to check if they can be used to create VM
+
+2. Write code for LB 
+    -> This will receive requests to create VMs
+    -> Pick up a backendServer to create an Ubuntu VM
+    -> Map port 22 of container to a random(8888) port of the Host Raspberry PI for SSH
+    -> Create an NGINX mapping with a subdomain to docker container
