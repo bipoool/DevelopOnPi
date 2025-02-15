@@ -1,4 +1,4 @@
-module deverlopOnPi
+module developOnPi
 
 go 1.23.4
 
