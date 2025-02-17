@@ -23,11 +23,11 @@ type BackendServerController struct {
 }
 
 func (backendServerController *BackendServerController) CheckStatus(ctx *gin.Context) {
-	status := backendServerController.backendServer.isAlive()
+	flagIsAlive := backendServerController.backendServer.isAlive()
 	activeContainers := backendServerController.backendServer.getActiveContainers()
 	cpuAvailable := backendServerController.backendServer.cpuAvailable()
 	memoryAvailable := backendServerController.backendServer.memoryAvailable()
-	ctx.JSON(http.StatusOK, gin.H{"status": status, "activeContainers": activeContainers,
+	ctx.JSON(http.StatusOK, gin.H{"flagIsAlive": flagIsAlive, "activeContainers": activeContainers,
 		"cpuAvailable": cpuAvailable, "memoryAvailable": memoryAvailable})
 }
 
